@@ -1,0 +1,39 @@
+<div class="card mt-5">
+  <div class="card-header">
+    Danh sách người dùng
+  </div>
+  <div class="card-body">
+    <div class="row m-2">
+      <div class="col-12 col-md-6">
+        <button (click)="showHideImage()" class="btn btn-success">Show/Hide</button>
+      </div>
+      <div class="col-12 col-md-6">
+        <input type="search" (keyup)="search($event)" class="form-control" style="width: 100%">
+      </div>
+    </div>
+    <table class="table">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên</th>
+        <th scope="col" [style.display]="showImage">Hình ảnh</th>
+        <th scope="col">Email</th>
+        <th scope="col">Địa chỉ</th>
+        <th scope="col">Ngày sinh</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of userFilter| paginate: { itemsPerPage: 1, currentPage: p }">
+        <th scope="row">1</th>
+        <td>{{ user.name }}</td>
+        <td [style.display]="showImage"><img [width]="sizeImage" src="{{ user.avatar}}" alt=""></td>
+        <td>{{ user.email}}</td>
+        <td>{{ user.address}}</td>
+        <td>{{ user.dob}}</td>
+      </tr>
+
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

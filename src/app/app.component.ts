@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular';
+
+  getInput(event): void {
+      this.title = event.target.value;
+  }
 }
