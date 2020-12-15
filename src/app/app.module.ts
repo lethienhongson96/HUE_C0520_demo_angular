@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { InputSearchComponent } from './core/input-search/input-search.component';
+import { MessageComponent } from './core/message/message.component';
+import { UserAddComponent } from './users/user-add/user-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    UserListComponent
+    UserListComponent,
+    InputSearchComponent,
+    MessageComponent,
+    UserAddComponent
   ],
   imports: [
     BrowserModule,

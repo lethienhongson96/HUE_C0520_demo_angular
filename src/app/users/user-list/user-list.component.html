@@ -8,9 +8,10 @@
         <button (click)="showHideImage()" class="btn btn-success">Show/Hide</button>
       </div>
       <div class="col-12 col-md-6">
-        <input type="search" (keyup)="search($event)" class="form-control" style="width: 100%">
+        <app-input-search (keyword)="search($event)"></app-input-search>
       </div>
     </div>
+    <app-message *ngIf="message" [txtMessage]="message"></app-message>
     <table class="table">
       <thead class="thead-light">
       <tr>
@@ -20,16 +21,19 @@
         <th scope="col">Email</th>
         <th scope="col">Địa chỉ</th>
         <th scope="col">Ngày sinh</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let user of userFilter| paginate: { itemsPerPage: 1, currentPage: p }">
+      <tr *ngFor="let user of userFilter| paginate: { itemsPerPage: 3, currentPage: p }">
         <th scope="row">1</th>
         <td>{{ user.name }}</td>
         <td [style.display]="showImage"><img [width]="sizeImage" src="{{ user.avatar}}" alt=""></td>
         <td>{{ user.email}}</td>
         <td>{{ user.address}}</td>
         <td>{{ user.dob}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="delete(user.id)">Delete</button></td>
       </tr>
 
       </tbody>
