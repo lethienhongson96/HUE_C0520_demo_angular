@@ -33,7 +33,9 @@
         <td>{{ user.address}}</td>
         <td>{{ user.dob}}</td>
         <td>
-          <button class="btn btn-danger" (click)="delete(user.id)">Delete</button></td>
+          <button class="btn btn-danger" (click)="delete(user.id)">Delete</button>
+          <button class="btn btn-primary" [routerLink]="[user.id, 'edit' ]">Edit</button>
+        </td>
       </tr>
 
       </tbody>

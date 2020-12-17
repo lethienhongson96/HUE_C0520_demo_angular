@@ -9,6 +9,8 @@ import {NgxPaginationModule} from "ngx-pagination";
 import { InputSearchComponent } from './core/input-search/input-search.component';
 import { MessageComponent } from './core/message/message.component';
 import { UserAddComponent } from './users/user-add/user-add.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { UserEditComponent } from './users/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { UserAddComponent } from './users/user-add/user-add.component';
     UserListComponent,
     InputSearchComponent,
     MessageComponent,
-    UserAddComponent
+    UserAddComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
