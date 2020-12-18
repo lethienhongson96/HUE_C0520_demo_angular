@@ -11,6 +11,10 @@ import { MessageComponent } from './core/message/message.component';
 import { UserAddComponent } from './users/user-add/user-add.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { UserEditComponent } from './users/user-edit/user-edit.component';
+import { GroupListComponent } from './groups/group-list/group-list.component';
+import {HttpClientModule} from "@angular/common/http";
+import { GroupAddComponent } from './groups/group-add/group-add.component';
+import { GroupEditComponent } from './groups/group-edit/group-edit.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +24,17 @@ import { UserEditComponent } from './users/user-edit/user-edit.component';
     InputSearchComponent,
     MessageComponent,
     UserAddComponent,
-    UserEditComponent
+    UserEditComponent,
+    GroupListComponent,
+    GroupAddComponent,
+    GroupEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxPaginationModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

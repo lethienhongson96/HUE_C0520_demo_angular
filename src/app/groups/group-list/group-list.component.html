@@ -1,0 +1,32 @@
+<div class="card mt-5">
+  <div class="card-header">
+    Danh sách lop hoc
+  </div>
+  <div class="card-body">
+    <div class="row m-2">
+      <div class="col-12 col-md-6">
+        <button routerLink="create" class="btn btn-success">Them moi</button>
+      </div>
+    </div>
+    <app-message *ngIf="message" [txtMessage]="message"></app-message>
+    <table class="table">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let group of groups">
+        <th scope="row">1</th>
+        <td>{{ group.name }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="delete(group.id)">Delete</button>
+          <a class="btn btn-primary" [routerLink]="[group.id, 'edit']">Edit</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
