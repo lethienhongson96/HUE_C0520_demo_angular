@@ -9,11 +9,10 @@ import {environment} from "../../environments/environment";
 })
 export class GroupService {
 
-
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<HttpResult> {
-      return this.http.get<HttpResult>(environment.url_back_end + '/groups')
+    return this.http.get<HttpResult>(environment.url_back_end + '/groups')
   }
 
   delete(id: number): Observable<HttpResult> {

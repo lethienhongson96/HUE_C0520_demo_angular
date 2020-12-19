@@ -25,12 +25,10 @@ const routes: Routes = [
     path: 'groups',
     component: GroupListComponent
   },
-
   {
     path: 'groups/create',
     component: GroupAddComponent
   },
-
   {
     path: 'groups/:id/edit',
     component: GroupEditComponent
